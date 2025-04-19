@@ -1,0 +1,31 @@
+{
+  "name": "ajudasocial_api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "swagger-autogen": "node swagger-autogen.js",
+    "swagger-autogen:watch": "nodemon --exec node swagger-autogen.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaihSeven/AjudaSocial_API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaihSeven/AjudaSocial_API/issues"
+  },
+  "homepage": "https://github.com/DaihSeven/AjudaSocial_API#readme",
+  "description": "API de Apoio a Pessoas em Situação de Rua",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.9",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
