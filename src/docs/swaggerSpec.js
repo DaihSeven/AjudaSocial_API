@@ -100,6 +100,7 @@ const swaggerSpec = {
       },
       // adicionar /recursos/ cidade
       // e /recursos/cidade/tipo
+      //arrumar essa documentação
     },
   };
   

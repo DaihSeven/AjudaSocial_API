@@ -1,4 +1,3 @@
-// src/controllers/RecursoController.js
 import RecursoService from '../services/RecursoService.js';
 
 const service = new RecursoService();
@@ -20,15 +19,41 @@ const RecursoController = {
     res.json(resultado);
   },
 
-  getById(req, res) {
-    const id = req.params.id;
-    const recurso = service.getById(id);
-    if (!recurso) {
-      return res.status(404).json({ erro: 'Recurso não encontrado' });
+  getByCidade(req, res) {
+    const { cidade } = req.params;
+    const resultado = service.getByCidade(cidade);
+    if (resultado.length === 0) {
+      return res.status(404).json({ message: `Nenhum recurso encontrado para a cidade ${cidade}.` });
     }
-    res.json(recurso);
+    res.json(resultado);
+  },
+
+  getByCidadeETipo(req, res) {
+    const { cidade, tipo } = req.params;
+    const resultado = service.getByCidadeETipo(cidade, tipo);
+    if (resultado.length === 0) {
+      return res.status(404).json({ message: `Este tipo ${tipo} não foi encontrado na cidade ${cidade}.` });
+    }
+    res.json(resultado);
+  },
+
+  getByCidadeELocalizacao(req, res) {
+    const { cidade, localizacao } = req.params;
+    const resultado = service.getByCidade(cidade, localizacao);
+    if (resultado.length === 0) {
+      return res.status(404).json({ message: `Nenhum recurso encontrado na cidade ${cidade} com a localização ${localizacao}.` });
+    }
+    res.json(resultado);
+  },
+
+  getByCidadeETipoELocalizacao(req, res) {
+    const { cidade, tipo, localizacao } = req.params;
+    const resultado = service.getByCidadeETipoELocalizacao(cidade, tipo, localizacao);
+    if (resultado.length === 0) {
+      return res.status(404).json({ message: `Este tipo ${tipo} não foi encontrado na localização e cidade ${cidade} especificados.` });
+    }
+    res.json(resultado);
   }
-  //gets para cidade e filtros
 };
 
 export default RecursoController;

@@ -1,3 +1,4 @@
+// /server.js
 import express from 'express';
 import recursoRoutes from './src/routes/recursoRoutes.routes.js';
 import swaggerUi from 'swagger-ui-express';

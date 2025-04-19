@@ -6,7 +6,9 @@ const router = express.Router();
 router.get('/', RecursoController.getAll);
 router.get('/tipo/:tipo', RecursoController.getByTipo);
 router.get('/localizacao/:localizacao', RecursoController.getByLocalizacao);
-router.get('/:id', RecursoController.getById);
+router.get('/cidade/:cidade', RecursoController.getByCidade);
+router.get('/:cidade/:tipo', RecursoController.getByCidadeETipo);
+router.get('/:cidade/localizacao/:localizacao', RecursoController.getByCidadeELocalizacao);
+router.get('/:cidade/:tipo/:localizacao', RecursoController.getByCidadeETipoELocalizacao);
 
-// Adicionar o endpoint para buscar recursos por cidade
 export default router;
