@@ -22,7 +22,7 @@ const recursos = [
     id: 3,
     nome: 'Centro de Atenção Psicossocial Álcool e outras Drogas - CAPS AD',
     tipo: ['apoio psicológico', 'apoio para dependentes'],
-    endereco: 'Saúde Mental - CAPS AD Rua Dona Leopoldina, 8, CENTRO 60110-000',
+    endereco: 'Rua Dona Leopoldina, 8, CENTRO 60110-000',
     cidade: 'Fortaleza',
     horario: 'Segunda à sexta: 8h às 17h',
     contato: '(85) 3105 1164 / 3452 6619'
