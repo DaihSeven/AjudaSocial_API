@@ -1,3 +1,4 @@
+// /routes/recursoRoutes.routes.js
 import express from 'express';
 import RecursoController from '../controllers/RecursoController.js';
 

@@ -19,7 +19,7 @@
     "url": "https://github.com/DaihSeven/AjudaSocial_API/issues"
   },
   "homepage": "https://github.com/DaihSeven/AjudaSocial_API#readme",
-  "description": "API de Apoio a Pessoas em Situação de Rua",
+  "description": "API de Apoio a Pessoas em Situação de Vulnerabilidade Social",
   "dependencies": {
     "express": "^5.1.0",
     "nodemon": "^3.1.9",

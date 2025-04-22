@@ -1,3 +1,4 @@
+// /src/docs/swaggerSpec.js
 const swaggerSpec = {
   openapi: '3.0.0',
   info: {
@@ -19,7 +20,7 @@ const swaggerSpec = {
       description: 'Servidor local de desenvolvimento',
     },
     {
-      url: 'https://api.ajudasocial.org/v1',//trocar o link
+      url: 'https://ajudasocial-api-yxbj.onrender.com',
       description: 'Servidor de produção'
     }
   ],

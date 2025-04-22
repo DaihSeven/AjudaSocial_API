@@ -1,22 +1,8 @@
 [![AjudaSocial_API - Live](https://img.shields.io/badge/API-Live-green)](https://ajudasocial-api-yxbj.onrender.com)
-
-
+![MIT](https://img.shields.io/badge/license-MIT-blue)
 # AjudaSocial_API
 
-Conectando pessoas em situação de vulnerabilidade a serviços essenciais
-
-# 📌 Problema
-
-Dados alarmantes sobre vulnerabilidade social no Brasil
-Segundo o IPEA (2023), o Brasil tem mais de 281 mil pessoas em situação de rua, com crescimento de 38% desde 2019.
-
-86% dos municípios brasileiros não possuem sistemas centralizados de informações sobre serviços sociais (Fonte: IBGE, 2022).
-
-Em pesquisa realizada para este projeto, identificou-se que:
-
-Curitiba destaca-se como a cidade com o melhor hub de informações (dados acessíveis via APIs municipais).
-
-70% das ONGs relatam dificuldade em atualizar informações em tempo real para quem precisa de ajuda.
+<i>Conectando pessoas em situação de vulnerabilidade a serviços essenciais</i>
 
 # 🎯 Objetivo
 A AjudaSocial_API é uma solução tecnológica criada para conectar pessoas em situação de vulnerabilidade social (como moradores de rua, desabrigados ou indivíduos em risco) a serviços de apoio essenciais. Muitas vezes, ao nos depararmos com alguém que precisa de ajuda, não sabemos como agir ou quais instituições podem auxiliar. Esta API centraliza informações sobre locais e organizações que oferecem suporte em áreas como:
@@ -29,46 +15,41 @@ A AjudaSocial_API é uma solução tecnológica criada para conectar pessoas em 
 
 📝 Ajuda jurídica e documentação
 
-"Facilitar o acesso a recursos que salvam vidas, conectando quem precisa de ajuda a quem pode oferecer."
-
-# 🛠️ Solução Técnica
-Como a API resolve o problema?
-Dados unificados: Agrega informações fragmentadas de prefeituras, ONGs e serviços sociais.
-
-Modelo escalável: Pode ser integrado a apps, sites governamentais e plataformas de assistência.
-
-Inspirado em Curitiba: Utiliza a mesma abordagem de hubs centralizados, mas com alcance nacional.
+<i>"Facilitar o acesso a recursos que salvam vidas, conectando quem precisa de ajuda a quem pode oferecer."</i>
 
 # 🚀 Rotas da API
 Endpoints principais
-- Rota raiz
+- >Rota raiz:
 https://ajudasocial-api-yxbj.onrender.com
 
-    - Redireciona para a documentação
+    - Redireciona para a documentação /api-docs
 
 - Lista completa de recursos
 https://ajudasocial-api-yxbj.onrender.com/recursos
 
-    - Retorna todos os serviços cadastrados
+    - Retorna todos os serviços cadastrados /recursos
 
 - Filtrar por tipo de serviço
 https://ajudasocial-api-yxbj.onrender.com/recursos/tipo/{tipo}
-
+    - /recursos/tipo/{tipo}
     - Exemplo:
-https://ajudasocial-api-yxbj.onrender.com/recursos/tipo/alimentação
-https://ajudasocial-api-yxbj.onrender.com/recursos/tipo/abrigo
+
+        https://ajudasocial-api-yxbj.onrender.com/recursos/tipo/alimentação
+
+        https://ajudasocial-api-yxbj.onrender.com/recursos/tipo/abrigo
 
 - Filtrar por cidade
 https://ajudasocial-api-yxbj.onrender.com/recursos/cidade/{cidade}
+    - Exemplo: /recursos/cidade/{cidade}
 
-    - Exemplo:
-https://ajudasocial-api-yxbj.onrender.com/recursos/cidade/Curitiba
-https://ajudasocial-api-yxbj.onrender.com/recursos/cidade/São Paulo
+    - https://ajudasocial-api-yxbj.onrender.com/recursos/cidade/Curitiba
 
-- Documentação interativa
+    - https://ajudasocial-api-yxbj.onrender.com/recursos/cidade/Fortaleza
+
+- Documentação interativa 
 https://ajudasocial-api-yxbj.onrender.com/api-docs
 
-Explore todos os endpoints via Swagger UI
+<i>💡Explore todos os endpoints via Swagger UI</i>
 # 💻 Como Usar
 
 # 1. Teste online
@@ -90,13 +71,17 @@ cp .env.example .env
 # Inicie o servidor
 npm start
 Acesse: http://localhost:3000
+
+#rotas
+/api-docs
+/recursos
+/recursos/tipo/{tipo}
+/recursos/localizacao/{localizacao}
+/recursos/cidade/{cidade}
+/recursos/cidade/{cidade}/{tipo}
+/recursos/cidade/{cidade}/localizacao/{localizacao}
+/recursos/cidade/{cidade}/{tipo}/{localizacao}
 ````
-# 3. Contribua
-Envie sugestões de novos recursos via Issues.
-
-Faça um fork e submeta Pull Requests com melhorias.
-
-Reporte erros ou dados desatualizados.
 
 # 📊 Tecnologias Utilizadas
 Backend: Node.js + Express
@@ -107,6 +92,30 @@ Deploy: Render.com
 
 Banco de Dados: JSON (mock inicial)
 
+# 🛠️ Estrutura do projeto 
+
+````bash
+AjudaSocial_API/
+
+├── src/
+│    └── controllers/
+│    │  └── RecursoController.js    #Lógica principal das rotas, ponte 
+│    └── database/
+│    │   └── mockDb.js     #Banco de dados em memória
+│    └── docs/
+│    │   └── swaggerSpec.js     #documentação Swagger
+│    └── models/
+│    │   └── recurso.js      #estrutura de dados dos recursos
+│    └── routes/
+│    │   └── recursoRoutes.routes.js    #os endpoints da API
+│    └── services/
+│        └── RecursoService.js   #Lógica de negócio, comunicação e regras de manipulação de dados
+├── package-lock.json     #versões exatas das dependências
+├── package.json      #Configurações do projeto e dependências
+├── README.md       #Documentação básica do projeto
+├── server.js      #Inicia o servidor
+
+````
 # 📌 Próximos Passos
 
 Migração para Banco de Dados real.
@@ -115,18 +124,13 @@ Expandir para 10 cidades brasileiras.
 
 Criar um frontend para busca simplificada.
 
+# 💡 Contribua
+Envie sugestões de novos recursos via Issues.
+
+Faça um fork e submeta Pull Requests com melhorias.
+
+Reporte erros ou dados desatualizados.
 # ✨ Tecnologia a serviço da transformação social.
 Acesse agora: https://ajudasocial-api-yxbj.onrender.com
 
-Estrutura do README.md
-Contexto do problema (com dados reais).
-
-Solução proposta (diferenciais técnicos).
-
-Rotas práticas (links diretos).
-
-Instruções claras para uso local/online.
-
-Chamada para ação (como contribuir).
-
-//precisa organizar a ordem do readme e a estrutura de pastas
+### 👩🏻‍💻 Autora Daiane das Graças Barbosa Koslowski

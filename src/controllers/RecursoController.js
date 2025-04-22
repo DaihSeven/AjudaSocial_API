@@ -1,3 +1,4 @@
+// /src/controllers/RecursoController.js
 import RecursoService from '../services/RecursoService.js';
 
 const service = new RecursoService();
