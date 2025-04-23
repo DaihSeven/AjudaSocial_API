@@ -90,7 +90,7 @@ Documentação: Swagger/OpenAPI
 
 Deploy: Render.com
 
-Banco de Dados: JSON (mock inicial)
+Banco de Dados: mock inicial
 
 # 🛠️ Estrutura do projeto 
 
