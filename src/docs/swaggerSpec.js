@@ -26,18 +26,18 @@ const swaggerSpec = {
   ],
   tags: [
     {
-      name: 'Recursos',
+      name: 'Resources',
       description: 'Operações relacionadas a recursos de assistência social'
     },
     {
-      name: 'Filtros',
+      name: 'Filters',
       description: 'Endpoints para filtrar recursos por diferentes critérios'
     }
   ],
   paths: {
-    '/recursos': {
+    '/resources': {
       get: {
-        tags: ['Recursos'],
+        tags: ['Resources'],
         summary: 'Lista todos os recursos disponíveis',
         description: 'Retorna uma lista completa de todos os recursos cadastrados no sistema',
         responses: {
@@ -48,7 +48,7 @@ const swaggerSpec = {
                 schema: {
                   type: 'array',
                   items: {
-                    $ref: '#/components/schemas/Recurso'
+                    $ref: '#/components/schemas/Resource'
                   }
                 }
               }
@@ -60,15 +60,15 @@ const swaggerSpec = {
         }
       }
     },
-    '/recursos/tipo/{tipo}': {
+    '/resources/type/{type}': {
       get: {
-        tags: ['Filtros'],
+        tags: ['Filters'],
         summary: 'Filtra recursos por tipo de serviço',
         description: 'Retorna recursos que oferecem um tipo específico de serviço (ex: alimentação, abrigo)',
         parameters: [
           {
             in: 'path',
-            name: 'tipo',
+            name: 'type',
             required: true,
             schema: {
               type: 'string',
@@ -80,33 +80,33 @@ const swaggerSpec = {
         ],
         responses: {
           200: {
-            description: 'Recursos filtrados por tipo retornados com sucesso',
+            description: 'recursos filtrados por tipo retornados com sucesso',
             content: {
               'application/json': {
                 schema: {
                   type: 'array',
                   items: {
-                    $ref: '#/components/schemas/Recurso'
+                    $ref: '#/components/schemas/Resource'
                   }
                 }
               }
             }
           },
           404: {
-            description: 'Nenhum recurso encontrado para o tipo especificado'
+            description: 'Nenhum recursos encontrado para o tipo especificado'
           }
         }
       }
     },
-    '/recursos/localizacao/{localizacao}': {
+    '/resources/localization/{localization}': {
       get: {
-        tags: ['Filtros'],
+        tags: ['Filters'],
         summary: 'Filtra recursos por localização aproximada',
         description: 'Retorna recursos localizados na área especificada (bairro, região ou ponto de referência)',
         parameters: [
           {
             in: 'path',
-            name: 'localizacao',
+            name: 'localization',
             required: true,
             schema: {
               type: 'string'
@@ -117,13 +117,13 @@ const swaggerSpec = {
         ],
         responses: {
           200: {
-            description: 'Recursos filtrados por localização retornados com sucesso',
+            description: 'recursos filtrados por localização retornados com sucesso',
             content: {
               'application/json': {
                 schema: {
                   type: 'array',
                   items: {
-                    $ref: '#/components/schemas/Recurso'
+                    $ref: '#/components/schemas/Resource'
                   }
                 }
               }
@@ -132,15 +132,15 @@ const swaggerSpec = {
         }
       }
     },
-    '/recursos/cidade/{cidade}': {
+    '/resources/city/{city}': {
       get: {
-        tags: ['Filtros'],
+        tags: ['Filters'],
         summary: 'Filtra recursos por cidade',
         description: 'Retorna todos os recursos disponíveis em uma determinada cidade',
         parameters: [
           {
             in: 'path',
-            name: 'cidade',
+            name: 'city',
             required: true,
             schema: {
               type: 'string',
@@ -152,13 +152,13 @@ const swaggerSpec = {
         ],
         responses: {
           200: {
-            description: 'Recursos filtrados por cidade retornados com sucesso',
+            description: 'recursos filtrados por cidade retornados com sucesso',
             content: {
               'application/json': {
                 schema: {
                   type: 'array',
                   items: {
-                    $ref: '#/components/schemas/RecursoCidade'
+                    $ref: '#/components/schemas/ResourceCity'
                   }
                 }
               }
@@ -167,15 +167,15 @@ const swaggerSpec = {
         }
       }
     },
-    '/recursos/{cidade}/{tipo}': {
+    '/resources/{city}/{type}': {
       get: {
-        tags: ['Filtros'],
+        tags: ['Filters'],
         summary: 'Filtra recursos por cidade e tipo de serviço',
-        description: 'Retorna recursos de um tipo específico em uma determinada cidade',
+        description: 'Retorna recursos de um type específico em uma determinada city',
         parameters: [
           {
             in: 'path',
-            name: 'cidade',
+            name: 'city',
             required: true,
             schema: {
               type: 'string',
@@ -186,7 +186,7 @@ const swaggerSpec = {
           },
           {
             in: 'path',
-            name: 'tipo',
+            name: 'type',
             required: true,
             schema: {
               type: 'string',
@@ -204,7 +204,7 @@ const swaggerSpec = {
                 schema: {
                   type: 'array',
                   items: {
-                    $ref: '#/components/schemas/RecursoCidadeTipo'
+                    $ref: '#/components/schemas/ResourceCityType'
                   }
                 }
               }
@@ -213,15 +213,15 @@ const swaggerSpec = {
         }
       }
     },
-    '/recursos/{cidade}/localizacao/{localizacao}': {
+    '/resources/{city}/localization/{localization}': {
       get: {
-        tags: ['Filtros'],
+        tags: ['Filters'],
         summary: 'Filtra recursos por cidade e localização específica',
         description: 'Retorna recursos em uma cidade filtrados por localização mais específica (bairro, região)',
         parameters: [
           {
             in: 'path',
-            name: 'cidade',
+            name: 'city',
             required: true,
             schema: {
               type: 'string',
@@ -249,7 +249,7 @@ const swaggerSpec = {
                 schema: {
                   type: 'array',
                   items: {
-                    $ref: '#/components/schemas/RecursoCidadeLocal'
+                    $ref: '#/components/schemas/ResourceCidadeLocal'
                   }
                 }
               }
@@ -258,15 +258,15 @@ const swaggerSpec = {
         }
       }
     },
-    '/recursos/{cidade}/{tipo}/{localizacao}': {
+    '/resources/{city}/{type}/{localizacao}': {
       get: {
-        tags: ['Filtros'],
-        summary: 'Filtra recursos por cidade, tipo e localização',
-        description: 'Retorna recursos filtrados por todos os critérios: cidade, tipo de serviço e localização específica',
+        tags: ['Filters'],
+        summary: 'Filtra recursos por city, type e localização',
+        description: 'Retorna recursos filtrados por todos os critérios: city, type de serviço e localização específica',
         parameters: [
           {
             in: 'path',
-            name: 'cidade',
+            name: 'city',
             required: true,
             schema: {
               type: 'string',
@@ -277,7 +277,7 @@ const swaggerSpec = {
           },
           {
             in: 'path',
-            name: 'tipo',
+            name: 'type',
             required: true,
             schema: {
               type: 'string',
@@ -305,7 +305,7 @@ const swaggerSpec = {
                 schema: {
                   type: 'array',
                   items: {
-                    $ref: '#/components/schemas/RecursoCidadeTipoLocal'
+                    $ref: '#/components/schemas/ResourceCidadeTipoLocal'
                   }
                 }
               }
@@ -317,181 +317,181 @@ const swaggerSpec = {
   },
   components: {
     schemas: {
-      Recurso: {
+      Resource: {
         type: 'object',
         properties: {
           id: {
             type: 'integer',
             example: 15
           },
-          nome: {
+          name: {
             type: 'string',
             example: 'Restaurante Popular'
           },
-          tipo: {
+          type: {
             type: 'array',
             items: {
               type: 'string'
             },
             example: ['alimentação']
           },
-          endereco: {
+          address: {
             type: 'string',
             example: 'Praça Rui Barbosa - Centro, Curitiba - PR'
           },
-          cidade: {
+          city: {
             type: 'string',
             example: 'Curitiba'
           },
-          horario: {
+          time: {
             type: 'string',
             example: 'segunda a sexta-feira, das 12h às 14h almoço, e ás 18h jantar'
           },
-          contato: {
+          contact: {
             type: 'string',
             example: '(41) 3322-3574'
           }
         }
       },
-      RecursoCidade: {
+      ResourceCidade: {
         type: 'object',
         properties: {
           id: {
             type: 'integer',
             example: 12
           },
-          nome: {
+          name: {
             type: 'string',
             example: 'Centro POP BELA VISTA'
           },
-          tipo: {
+          type: {
             type: 'array',
             items: {
               type: 'string'
             },
             example: ['abrigo', 'apoio socioassistencial']
           },
-          endereco: {
+          address: {
             type: 'string',
             example: 'Rua Jandaia, 30 - Bela Vista, CENTRO São Paulo- SP'
           },
-          cidade: {
+          city: {
             type: 'string',
             example: 'São Paulo'
           },
-          horario: {
+          time: {
             type: 'string',
             example: 'segunda a sexta, 8h às 17h'
           },
-          contato: {
+          contact: {
             type: 'string',
             example: '(11) 3104-0423/2292 / creaspopbelavista@prefeitura.sp.gov.br'
           }
         }
       },
-      RecursoCidadeTipo: {
+      ResourceCidadeTipo: {
         type: 'object',
         properties: {
           id: {
             type: 'integer',
             example: 18
           },
-          nome: {
+          name: {
             type: 'string',
             example: 'CES Central Encaminhamento Social 24h - Procura Espontânea'
           },
-          tipo: {
+          type: {
             type: 'array',
             items: {
               type: 'string'
             },
             example: ['abrigo','orientação', 'apoio socioassistencial']
           },
-          endereco: {
+          address: {
             type: 'string',
             example: 'Rua Francisco Torres, 500 - Centro'
           },
-          cidade: {
+          city: {
             type: 'string',
             example: 'Curitiba'
           },
-          horario: {
+          time: {
             type: 'string',
             example: '7h às 19h'
           },
-          contato: {
+          contact: {
             type: 'string',
             example: 'Através da Central 156'
           }
         }
       },
-      RecursoCidadeLocal: {
+      ResourceCidadeLocal: {
         type: 'object',
         properties: {
           id: {
             type: 'integer',
             example: 3
           },
-          nome: {
+          name: {
             type: 'string',
             example: 'Centro de Atenção Psicossocial Álcool e outras Drogas - CAPS AD'
           },
-          tipo: {
+          type: {
             type: 'array',
             items: {
               type: 'string'
             },
             example: ['apoio psicológico', 'apoio para dependentes']
           },
-          endereco: {
+          address: {
             type: 'string',
             example: 'Rua Dona Leopoldina, 8, CENTRO 60110-000'
           },
-          cidade: {
+          city: {
             type: 'string',
             example: 'Fortaleza'
           },
-          horario: {
+          time: {
             type: 'string',
             example: 'Segunda à sexta: 8h às 17h'
           },
-          contato: {
+          contact: {
             type: 'string',
             example: '(85) 3105 1164 / 3452 6619'
           }
         }
       },
-      RecursoCidadeTipoLocal: {
+      ResourceCidadeTipoLocal: {
         type: 'object',
         properties: {
           id: {
             type: 'integer',
             example: 8
           },
-          nome: {
+          name: {
             type: 'string',
             example: 'Bom Prato de Campos Elíseos'
           },
-          tipo: {
+          type: {
             type: 'array',
             items: {
               type: 'string'
             },
             example: ['alimentação', 'preço baixo']
           },
-          endereco: {
+          address: {
             type: 'string',
             example: 'R. Gen. Júlio Marcondes Salgado, 56 - Campos Elíseos, São Paulo - SP, 01201-020'
           },
-          cidade: {
+          city: {
             type: 'string',
             example: 'São Paulo'
           },
-          horario: {
+          time: {
             type: 'string',
             example: 'segunda a domingo, 7h30min às 19h'
           },
-          contato: {
+          contact: {
             type: 'string',
             example: '(11) 2763-8040'
           }
