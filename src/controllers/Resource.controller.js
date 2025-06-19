@@ -9,7 +9,7 @@ const ResourceController = {
       const data = await service.getAllResource();
       res.json(data);
     } catch (error) {
-      res.status(500).json({ message: 'Erro ao buscar os recursos.' });
+      res.status(500).json({ message: 'Erro ao buscar os recursos.', error: error.message });
     }
   },
 
@@ -19,7 +19,7 @@ const ResourceController = {
       const result = await service.getByType(type);
       res.json(result);
     } catch (error) {
-      res.status(500).json({ message: 'Erro ao buscar recursos por tipo.' });
+      res.status(500).json({ message: 'Erro ao buscar recursos por tipo.', error: error.message });
     }
   },
 
@@ -29,7 +29,7 @@ const ResourceController = {
       const result = await service.getByLocalization(localization);
       res.json(result);
     } catch (error) {
-      res.status(500).json({ message: 'Erro ao buscar recursos por localização.' });
+      res.status(500).json({ message: 'Erro ao buscar recursos por localização.', error: error.message });
     }
   },
 
@@ -42,7 +42,7 @@ const ResourceController = {
       }
       res.json(result);
     } catch (error) {
-      res.status(500).json({ message: 'Erro ao buscar recursos por cidade.' });
+      res.status(500).json({ message: 'Erro ao buscar recursos por cidade.', error: error.message });
     }
   },
 
@@ -55,7 +55,7 @@ const ResourceController = {
       }
       res.json(result);
     } catch (error) {
-      res.status(500).json({ message: 'Erro ao buscar recursos por cidade e tipo.' });
+      res.status(500).json({ message: 'Erro ao buscar recursos por cidade e tipo.', error: error.message });
     }
   },
 
@@ -68,7 +68,7 @@ const ResourceController = {
       }
       res.json(result);
     } catch (error) {
-      res.status(500).json({ message: 'Erro ao buscar recursos por cidade e localização.' });
+      res.status(500).json({ message: 'Erro ao buscar recursos por cidade e localização.', error: error.message});
     }
   },
 
@@ -81,8 +81,9 @@ const ResourceController = {
       }
       res.json(result);
     } catch (error) {
-      res.status(500).json({ message: 'Erro ao buscar recursos por cidade, tipo e localização.' });
+      res.status(500).json({ message: 'Erro ao buscar recursos por cidade, tipo e localização.', error: error.message });
     }
+
   }
 };
 

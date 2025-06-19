@@ -1,5 +1,6 @@
 // server.js
 import express from 'express';
+import cors from 'cors'
 import resourceRoutes from './src/routes/resourceRoutes.routes.js'; // nome já está em inglês
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './src/docs/swaggerSpec.js';
@@ -7,6 +8,7 @@ import swaggerSpec from './src/docs/swaggerSpec.js';
 const app = express();
 
 app.use(express.json());
+app.use(cors()); // Enable CORS for all routes
 
 // Redirect root to Swagger docs
 app.get('/', (req, res) => {

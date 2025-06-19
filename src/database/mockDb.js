@@ -1,4 +1,5 @@
 // src/database/mockDb.js
+// usado para armazenamento extra, caso precise verificar algo fora do banco
 const recursos = [
   {
     id: 1,
@@ -224,7 +225,8 @@ const recursos = [
     cidade: 'Fortaleza',  
     horario: 'segunda a sexta, 8h às 17h',
     contato: '(85) 3194-5000'
-  }
+  },
+  
 ];
 
 export default recursos;
