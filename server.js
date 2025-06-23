@@ -1,5 +1,6 @@
 // /server.js
 import express from 'express';
+import cors from 'cors';
 import recursoRoutes from './src/routes/recursoRoutes.routes.js';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './src/docs/swaggerSpec.js';
@@ -7,6 +8,7 @@ import swaggerSpec from './src/docs/swaggerSpec.js';
 const app = express();
 
 app.use(express.json()); 
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.redirect('/api-docs');
