@@ -4,6 +4,7 @@
 
 <i>Conectando pessoas em situação de vulnerabilidade a serviços essenciais</i>
 
+[FrontEnd](https://client-social-connect.vercel.app/)
 # 🎯 Objetivo
 A AjudaSocial_API é uma solução tecnológica criada para conectar pessoas em situação de vulnerabilidade social (como moradores de rua, desabrigados ou indivíduos em risco) a serviços de apoio essenciais. Muitas vezes, ao nos depararmos com alguém que precisa de ajuda, não sabemos como agir ou quais instituições podem auxiliar. Esta API centraliza informações sobre locais e organizações que oferecem suporte em áreas como:
 
@@ -84,13 +85,20 @@ Acesse: http://localhost:3000
 ````
 
 # 📊 Tecnologias Utilizadas
-Backend: Node.js + Express
+Versão.1:
 
-Documentação: Swagger/OpenAPI
+- Backend: Node.js + Express
 
-Deploy: Render.com
+- Documentação: Swagger/OpenAPI
 
-Banco de Dados: mock inicial
+- Deploy: Render.com
+
+- Banco de Dados: mock inicial
+- 
+Versão.2:
+
+- Implementado banco de dados PostgreSQL e ORM Prisma
+  
 
 # 🛠️ Estrutura do projeto 
 
@@ -118,11 +126,11 @@ AjudaSocial_API/
 ````
 # 📌 Próximos Passos
 
-Migração para Banco de Dados real.
+☑️:Migração para Banco de Dados real.
 
-Expandir para 10 cidades brasileiras.
+🏗️:Expandir para 10 cidades brasileiras.
 
-Criar um frontend para busca simplificada.
+☑️:Criar um frontend para busca simplificada.[https://client-social-connect.vercel.app/](https://client-social-connect.vercel.app/)
 
 # 💡 Contribua
 Envie sugestões de novos recursos via Issues.
